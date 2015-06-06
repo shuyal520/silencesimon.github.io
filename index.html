@@ -135,8 +135,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/06/hello-world/">
-                Hello World
+              <a class="post-title-link" href="/2015/06/06/hexo-install/">
+                Hexo降级到v2.8.3小记
               </a>
             
           
@@ -152,7 +152,7 @@
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/测试/">测试</a>
+              <a href="/categories/技术/">技术</a>
 
               
               
@@ -165,8 +165,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/06/hello-world/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/06/hello-world/"></span>
+            <a href="/2015/06/06/hexo-install/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/06/hexo-install/"></span>
             </a>
           </span>
           
@@ -181,10 +181,27 @@
 
       
         
-          <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-
+          <p>今天手贱想把hexo升级到3.0以上，结果升级失败，又听说新版对主题支持不好，所以就想降级。期间比较折腾，降级到2.8.3之后就记录一下。本文是在Mac OSX 10.9.5下面操作的。<br>1月份的时候装hexo就一个命令<code>npm install hexo -g</code>了事，现在有了新版hexo，想装2.8.3就没那么顺利咯~~~</p>
+<h2 id="版本信息">版本信息</h2>
+<p>先把目前版本信息贴出来:（降级期间试过<code>nodejs v0.12.4</code>，结果不行，还是装回<code>v0.10.36</code>）</p>
+<pre><code><span class="label">rmbp15:</span>hexo-blog simon$ node --version
+v0<span class="number">.10</span><span class="number">.36</span>
+<span class="label">rmbp15:</span>hexo-blog simon$ npm --version
+<span class="number">1.4</span><span class="number">.28</span>
+<span class="label">rmbp15:</span>hexo-blog simon$ hexo --version
+<span class="label">hexo:</span> <span class="number">2.8</span><span class="number">.3</span>
+<span class="label">os:</span> Darwin <span class="number">13.4</span><span class="number">.0</span> darwin x64
+<span class="label">http_parser:</span> <span class="number">1.0</span>
+<span class="label">node:</span> <span class="number">0.10</span><span class="number">.36</span>
+<span class="label">v8:</span> <span class="number">3.14</span><span class="number">.5</span><span class="number">.9</span>
+<span class="label">ares:</span> <span class="number">1.9</span><span class="number">.0</span>-DEV
+<span class="label">uv:</span> <span class="number">0.10</span><span class="number">.30</span>
+<span class="label">zlib:</span> <span class="number">1.2</span><span class="number">.8</span>
+<span class="label">modules:</span> <span class="number">11</span>
+<span class="label">openssl:</span> <span class="number">1.0</span><span class="number">.1</span>l
+</code></pre>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/06/hello-world/#more">
+            <a class="btn" href="/2015/06/06/hexo-install/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -254,7 +271,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

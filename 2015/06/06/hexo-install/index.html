@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="test,test2," />
+  <meta name="keywords" content="hexo降级," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> Hello World // 思念观世音 </title>
+  <title> Hexo降级到v2.8.3小记 // 思念观世音 </title>
 </head>
 
 <body>
@@ -133,7 +133,7 @@
           
           
             
-              Hello World
+              Hexo降级到v2.8.3小记
             
           
         </h1>
@@ -148,7 +148,7 @@
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/测试/">测试</a>
+              <a href="/categories/技术/">技术</a>
 
               
               
@@ -161,8 +161,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/06/hello-world/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/06/hello-world/"></span>
+            <a href="/2015/06/06/hexo-install/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/06/hexo-install/"></span>
             </a>
           </span>
           
@@ -176,25 +176,47 @@
       
 
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>今天手贱想把hexo升级到3.0以上，结果升级失败，又听说新版对主题支持不好，所以就想降级。期间比较折腾，降级到2.8.3之后就记录一下。本文是在Mac OSX 10.9.5下面操作的。<br>1月份的时候装hexo就一个命令<code>npm install hexo -g</code>了事，现在有了新版hexo，想装2.8.3就没那么顺利咯~~~</p>
+<h2 id="版本信息">版本信息</h2>
+<p>先把目前版本信息贴出来:（降级期间试过<code>nodejs v0.12.4</code>，结果不行，还是装回<code>v0.10.36</code>）</p>
+<pre><code><span class="label">rmbp15:</span>hexo-blog simon$ node --version
+v0<span class="number">.10</span><span class="number">.36</span>
+<span class="label">rmbp15:</span>hexo-blog simon$ npm --version
+<span class="number">1.4</span><span class="number">.28</span>
+<span class="label">rmbp15:</span>hexo-blog simon$ hexo --version
+<span class="label">hexo:</span> <span class="number">2.8</span><span class="number">.3</span>
+<span class="label">os:</span> Darwin <span class="number">13.4</span><span class="number">.0</span> darwin x64
+<span class="label">http_parser:</span> <span class="number">1.0</span>
+<span class="label">node:</span> <span class="number">0.10</span><span class="number">.36</span>
+<span class="label">v8:</span> <span class="number">3.14</span><span class="number">.5</span><span class="number">.9</span>
+<span class="label">ares:</span> <span class="number">1.9</span><span class="number">.0</span>-DEV
+<span class="label">uv:</span> <span class="number">0.10</span><span class="number">.30</span>
+<span class="label">zlib:</span> <span class="number">1.2</span><span class="number">.8</span>
+<span class="label">modules:</span> <span class="number">11</span>
+<span class="label">openssl:</span> <span class="number">1.0</span><span class="number">.1</span>l
+</code></pre><a id="more"></a>
+<h2 id="安装hexo_2-8-3">安装hexo 2.8.3</h2>
+<p>执行命令</p>
+<pre><code><span class="variable">$sudo</span> npm install hexo<span class="variable">@2</span>.<span class="number">8.3</span> -g
+</code></pre><p>等待过程中报错</p>
+<pre><code>xcode-select: error: tool <span class="string">'xcodebuild'</span> requires Xcode, but active developer <span class="built_in">directory</span> <span class="string">'/Library/Developer/CommandLineTools'</span> is <span class="operator">a</span> <span class="command"><span class="keyword">command</span> <span class="title">line</span> <span class="title">tools</span> <span class="title">instance</span></span>
+</code></pre><p>Google之后知道需要装Xcode，我找了Xcode v6.0.1版本，装了之后执行</p>
+<pre><code><span class="built_in">sudo</span> xcode-select <span class="operator">-s</span> /Applications/Xcode.app/Contents/Developer
+</code></pre><p>安装好hexo，执行<code>hexo init</code>以及<code>npm install</code>之后把source, themes, _config.yml拷过去，再执行<code>hexo g</code>报错：</p>
+<pre><code>[<span class="keyword">error</span>] HexoError: Process failed: _posts/hello-world.md
+TypeError: Cannot <span class="command">read</span> <span class="keyword">property</span> 'config' <span class="keyword">of</span> null
+    <span class="keyword">at</span> module.exports (/Users/simon/temp/hexotest/node_modules/hexo-renderer-marked/lib/renderer.js:<span class="number">55</span>:<span class="number">10</span>)
+    <span class="keyword">at</span> /usr/<span class="keyword">local</span>/lib/node_modules/hexo/lib/extend/renderer.js:<span class="number">78</span>:<span class="number">38</span>
+        <span class="keyword">at</span> b (domain.js:<span class="number">183</span>:<span class="number">18</span>)
+    <span class="keyword">at</span> Domain.<span class="command">run</span> (domain.js:<span class="number">123</span>:<span class="number">23</span>)
+    <span class="keyword">at</span> store.(anonymous function) (/usr/<span class="keyword">local</span>/lib/node_modules/hexo/lib/extend/renderer.js:<span class="number">77</span>:<span class="number">9</span>)
+    <span class="keyword">at</span> /usr/<span class="keyword">local</span>/lib/node_modules/hexo/lib/core/render.js:<span class="number">96</span>:<span class="number">9</span>
+        <span class="keyword">at</span> fn (/usr/<span class="keyword">local</span>/lib/node_modules/hexo/node_modules/async/lib/async.js:<span class="number">638</span>:<span class="number">34</span>)
+    <span class="keyword">at</span> Object._onImmediate (/usr/<span class="keyword">local</span>/lib/node_modules/hexo/node_modules/async/lib/async.js:<span class="number">554</span>:<span class="number">34</span>)
+    <span class="keyword">at</span> processImmediate [<span class="keyword">as</span> _immediateCallback] (timers.js:<span class="number">354</span>:<span class="number">15</span>)
+</code></pre><p>Google之后发现是因为相关插件的版本不对。在<code>hexo 2.8.3</code>下要安装指定版本的插件：</p>
+<pre><code>npm install hexo-<span class="keyword">renderer</span>-ejs<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span> hexo-<span class="keyword">renderer</span>-marked<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span> hexo-<span class="keyword">renderer</span>-stylus<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span>
+</code></pre><p>终于搞好了，轻松~</p>
 
       
     </div>
@@ -203,9 +225,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/"> #test </a>
-          
-            <a href="/tags/test2/"> #test2 </a>
+            <a href="/tags/hexo降级/"> #hexo降级 </a>
           
         </div>
       
@@ -222,8 +242,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/06/06/hello-world/"
-               data-title="Hello World" data-url="http://silencesimon.github.io/2015/06/06/hello-world/">
+          <div class="ds-thread" data-thread-key="2015/06/06/hexo-install/"
+               data-title="Hexo降级到v2.8.3小记" data-url="http://silencesimon.github.io/2015/06/06/hexo-install/">
           </div>
         
       </div>
@@ -284,7 +304,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -320,7 +340,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本信息"><span class="nav-number">1.</span> <span class="nav-text">版本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo_2-8-3"><span class="nav-number">2.</span> <span class="nav-text">安装hexo 2.8.3</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
