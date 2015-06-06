@@ -200,7 +200,7 @@ v0<span class="number">.10</span><span class="number">.36</span>
 <pre><code><span class="variable">$sudo</span> npm install hexo<span class="variable">@2</span>.<span class="number">8.3</span> -g
 </code></pre><p>等待过程中报错</p>
 <pre><code>xcode-select: error: tool <span class="string">'xcodebuild'</span> requires Xcode, but active developer <span class="built_in">directory</span> <span class="string">'/Library/Developer/CommandLineTools'</span> is <span class="operator">a</span> <span class="command"><span class="keyword">command</span> <span class="title">line</span> <span class="title">tools</span> <span class="title">instance</span></span>
-</code></pre><p>Google之后知道需要装Xcode，我找了Xcode v6.0.1版本，装了之后执行</p>
+</code></pre><p><a href="http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error-on-osx-mavericks" target="_blank" rel="external">Google之后</a>知道需要装Xcode，我找了Xcode v6.0.1版本，装了之后执行</p>
 <pre><code><span class="built_in">sudo</span> xcode-select <span class="operator">-s</span> /Applications/Xcode.app/Contents/Developer
 </code></pre><p>安装好hexo，执行<code>hexo init</code>以及<code>npm install</code>之后把source, themes, _config.yml拷过去，再执行<code>hexo g</code>报错：</p>
 <pre><code>[<span class="keyword">error</span>] HexoError: Process failed: _posts/hello-world.md
@@ -214,7 +214,7 @@ TypeError: Cannot <span class="command">read</span> <span class="keyword">proper
         <span class="keyword">at</span> fn (/usr/<span class="keyword">local</span>/lib/node_modules/hexo/node_modules/async/lib/async.js:<span class="number">638</span>:<span class="number">34</span>)
     <span class="keyword">at</span> Object._onImmediate (/usr/<span class="keyword">local</span>/lib/node_modules/hexo/node_modules/async/lib/async.js:<span class="number">554</span>:<span class="number">34</span>)
     <span class="keyword">at</span> processImmediate [<span class="keyword">as</span> _immediateCallback] (timers.js:<span class="number">354</span>:<span class="number">15</span>)
-</code></pre><p>Google之后发现是因为相关插件的版本不对。在<code>hexo 2.8.3</code>下要安装指定版本的插件：</p>
+</code></pre><p><a href="https://coderq.com/t/hexojiang-ji-3-dot-0-to-2-dot-8/1851" target="_blank" rel="external">Google之后</a>发现是因为相关插件的版本不对。在<code>hexo 2.8.3</code>下要安装指定版本的插件：</p>
 <pre><code>npm install hexo-<span class="keyword">renderer</span>-ejs<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span> hexo-<span class="keyword">renderer</span>-marked<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span> hexo-<span class="keyword">renderer</span>-stylus<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span>
 </code></pre><p>终于搞好了，轻松~</p>
 
