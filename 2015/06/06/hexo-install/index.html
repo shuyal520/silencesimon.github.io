@@ -163,7 +163,7 @@
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/技术/">技术</a>
+              <a href="/categories/安装部署/">安装部署</a>
 
               
               
@@ -191,7 +191,7 @@
       
 
       
-        <p>今天手贱想把hexo升级到3.0以上，结果升级失败，又听说新版对主题支持不好，所以就想降级。期间比较折腾，降级到2.8.3之后就记录一下。本文是在Mac OSX 10.9.5下面操作的。<br>1月份的时候装hexo就一个命令<code>npm install hexo -g</code>了事，现在有了新版hexo，想装2.8.3就没那么顺利咯~~~</p>
+        <p>今天手贱想把hexo升级到3.0，结果升级失败，又听说新版对主题支持不好，所以就先不折腾了，还是先安心用2.8.3吧。期间比较折腾，降级之后就记录一下。本文是在Mac OSX 10.9.5下面操作的。<br>1月份的时候装hexo就一个命令<code>npm install hexo -g</code>了事，现在有了新版hexo，想装2.8.3就没那么顺利咯~~~</p>
 <a id="more"></a>
 <h2 id="版本信息">版本信息</h2>
 <p>先把目前版本信息贴出来:（降级期间试过<code>nodejs v0.12.4</code>，结果不行，还是装回<code>v0.10.36</code>）</p>
@@ -231,7 +231,7 @@ TypeError: Cannot <span class="command">read</span> <span class="keyword">proper
     <span class="keyword">at</span> processImmediate [<span class="keyword">as</span> _immediateCallback] (timers.js:<span class="number">354</span>:<span class="number">15</span>)
 </code></pre><p><a href="https://coderq.com/t/hexojiang-ji-3-dot-0-to-2-dot-8/1851" target="_blank" rel="external">Google之后</a>发现是因为相关插件的版本不对。在<code>hexo 2.8.3</code>下要安装指定版本的插件：</p>
 <pre><code>npm install hexo-<span class="keyword">renderer</span>-ejs<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span> hexo-<span class="keyword">renderer</span>-marked<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span> hexo-<span class="keyword">renderer</span>-stylus<span class="variable">@0</span><span class="number">.1</span><span class="number">.0</span>
-</code></pre><p>终于搞好了，轻松~</p>
+</code></pre><p>终于搞好了，轻松~~ 以后合适的时候再来玩玩<code>hexo 3.0</code></p>
 
       
     </div>
